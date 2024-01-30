@@ -1,0 +1,65 @@
+package coursework;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
+public class SignUpPage extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					SignUpPage frame = new SignUpPage();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public SignUpPage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1080, 720);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel headerPanel = new JPanel();
+		headerPanel.setBackground(Color.LIGHT_GRAY);
+		headerPanel.setBounds(0, 0, 1066, 94);
+		contentPane.add(headerPanel);
+		headerPanel.setLayout(null);
+		
+		JLabel headerLabel = new JLabel("Sign Up");
+		headerLabel.setForeground(Color.DARK_GRAY);
+		headerLabel.setFont(new Font("Tahoma", Font.BOLD, 35));
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setBounds(357, 10, 305, 54);
+		headerPanel.add(headerLabel);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Acer\\Downloads\\circle-user.png"));
+		lblNewLabel.setBounds(92, 201, 148, 100);
+		contentPane.add(lblNewLabel);
+	}
+}

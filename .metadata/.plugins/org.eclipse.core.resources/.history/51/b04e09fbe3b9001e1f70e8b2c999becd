@@ -1,0 +1,70 @@
+package login;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
+public class Login {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Login() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1366, 634);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(143, 188, 143));
+		panel.setBounds(0, 0, 545, 597);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel welcomeLabel = new JLabel("Welcome Back !");
+		welcomeLabel.setIcon(new ImageIcon("C:\\Users\\Acer\\eclipse-workspace\\CourseManagementSystem\\src\\login\\login.png"));
+		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		welcomeLabel.setFont(new Font("Times New Roman", Font.BOLD, 50));
+		welcomeLabel.setEnabled(true);
+		welcomeLabel.setBounds(10, 147, 525, 82);
+		panel.add(welcomeLabel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(157, 175, 154));
+		panel_1.setBounds(544, 0, 808, 597);
+		frame.getContentPane().add(panel_1);
+	}
+}

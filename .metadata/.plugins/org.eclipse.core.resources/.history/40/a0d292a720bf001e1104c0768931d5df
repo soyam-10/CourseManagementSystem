@@ -1,0 +1,97 @@
+package workshop10;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+
+public class loginPage {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					loginPage window = new loginPage();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public loginPage() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 819, 567);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel headPanel = new JPanel();
+		headPanel.setLayout(null);
+		headPanel.setBackground(Color.GRAY);
+		headPanel.setBounds(-101, 0, 906, 77);
+		frame.getContentPane().add(headPanel);
+		
+		JLabel lblLogIn = new JLabel("Log In");
+		lblLogIn.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogIn.setForeground(Color.YELLOW);
+		lblLogIn.setFont(new Font("Times New Roman", Font.BOLD, 35));
+		lblLogIn.setBounds(326, 10, 387, 57);
+		headPanel.add(lblLogIn);
+		
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(null);
+		mainPanel.setBounds(0, 87, 805, 433);
+		frame.getContentPane().add(mainPanel);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Dialog", Font.BOLD, 17));
+		textField.setColumns(10);
+		textField.setBounds(376, 115, 311, 27);
+		mainPanel.add(textField);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Dialog", Font.BOLD, 17));
+		passwordField.setBounds(376, 178, 308, 27);
+		mainPanel.add(passwordField);
+		
+		JLabel emailLabel = new JLabel("Email");
+		emailLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		emailLabel.setBounds(218, 115, 118, 27);
+		mainPanel.add(emailLabel);
+		
+		JLabel passwordLabel = new JLabel("Password");
+		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		passwordLabel.setBounds(218, 169, 148, 36);
+		mainPanel.add(passwordLabel);
+		
+		JButton signInBtn = new JButton("Sign In");
+		signInBtn.setFont(new Font("Tahoma", Font.BOLD, 25));
+		signInBtn.setBounds(269, 229, 308, 36);
+		mainPanel.add(signInBtn);
+	}
+}

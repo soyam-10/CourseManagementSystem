@@ -1,0 +1,74 @@
+package login;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class Login {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Login() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1366, 634);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(117, 191, 67));
+		panel.setBounds(0, 0, 545, 597);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Welcome Back !");
+		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 40));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(79, 159, 367, 73);
+		panel.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Sign In");
+		btnNewButton.setBackground(new Color(0, 255, 0));
+		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 20));
+		btnNewButton.setBounds(183, 242, 123, 35);
+		panel.add(btnNewButton);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(165, 202, 100));
+		panel_1.setBounds(544, 0, 808, 597);
+		frame.getContentPane().add(panel_1);
+	}
+}
