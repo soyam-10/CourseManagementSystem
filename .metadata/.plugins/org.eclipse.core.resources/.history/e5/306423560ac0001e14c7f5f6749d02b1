@@ -1,0 +1,164 @@
+package coursework;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import java.awt.Choice;
+import java.awt.Button;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+
+public class SignUpPage extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					SignUpPage frame = new SignUpPage();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public SignUpPage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1080, 720);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel headerPanel = new JPanel();
+		headerPanel.setBackground(new Color(255, 255, 255));
+		headerPanel.setBounds(0, 0, 1066, 94);
+		contentPane.add(headerPanel);
+		headerPanel.setLayout(null);
+		
+		JLabel headerLabel = new JLabel("Sign Up");
+		headerLabel.setForeground(Color.DARK_GRAY);
+		headerLabel.setFont(new Font("Tahoma", Font.BOLD, 35));
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setBounds(352, 30, 305, 43);
+		headerPanel.add(headerLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 95, 478, 594);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(478, 96, 590, 592);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(null);
+		mainPanel.setBounds(-475, 0, 1079, 586);
+		panel_1.add(mainPanel);
+		
+		JLabel userModeIcon = new JLabel("");
+		userModeIcon.setBounds(634, 131, 32, 32);
+		mainPanel.add(userModeIcon);
+		
+		JLabel emailIcon = new JLabel("");
+		emailIcon.setBounds(630, 266, 32, 32);
+		mainPanel.add(emailIcon);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.BOLD, 17));
+		textField.setColumns(10);
+		textField.setBounds(672, 269, 242, 32);
+		mainPanel.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		textField_1.setColumns(10);
+		textField_1.setBounds(672, 201, 242, 32);
+		mainPanel.add(textField_1);
+		
+		JLabel userIcon = new JLabel("");
+		userIcon.setBounds(630, 198, 32, 32);
+		mainPanel.add(userIcon);
+		
+		JLabel usernameLabel = new JLabel("Enter username");
+		usernameLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		usernameLabel.setBounds(672, 175, 192, 25);
+		mainPanel.add(usernameLabel);
+		
+		JLabel emailLabel = new JLabel("Enter email");
+		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		emailLabel.setBounds(672, 243, 192, 25);
+		mainPanel.add(emailLabel);
+		
+		JLabel userModeLabel = new JLabel("select user mode");
+		userModeLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		userModeLabel.setBounds(679, 102, 192, 25);
+		mainPanel.add(userModeLabel);
+		
+		JButton signUpBtn = new JButton("Sign Up");
+		signUpBtn.setFont(new Font("Tahoma", Font.BOLD, 25));
+		signUpBtn.setBounds(639, 399, 308, 36);
+		mainPanel.add(signUpBtn);
+		
+		JLabel infoLabel = new JLabel("Already a member?");
+		infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		infoLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		infoLabel.setBounds(639, 445, 308, 36);
+		mainPanel.add(infoLabel);
+		
+		JButton logInBtn = new JButton("Log In");
+		logInBtn.setFont(new Font("Tahoma", Font.BOLD, 25));
+		logInBtn.setBounds(639, 491, 311, 36);
+		mainPanel.add(logInBtn);
+		
+		JLabel phoneIcon_1 = new JLabel("");
+		phoneIcon_1.setBounds(630, 334, 32, 32);
+		mainPanel.add(phoneIcon_1);
+		
+		JLabel lblEnterPassword = new JLabel("Enter password");
+		lblEnterPassword.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblEnterPassword.setBounds(672, 311, 192, 25);
+		mainPanel.add(lblEnterPassword);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tahoma", Font.BOLD, 17));
+		passwordField.setBounds(672, 334, 242, 32);
+		mainPanel.add(passwordField);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setToolTipText("Select Gender");
+		comboBox.setMaximumRowCount(2);
+		comboBox.setBounds(683, 134, 178, 29);
+		mainPanel.add(comboBox);
+	}
+}

@@ -1,0 +1,185 @@
+package coursework;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import java.awt.Choice;
+import java.awt.Button;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.SystemColor;
+
+public class SignUpPage extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					SignUpPage frame = new SignUpPage();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public SignUpPage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1080, 720);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel headerPanel = new JPanel();
+		headerPanel.setBackground(new Color(255, 255, 255));
+		headerPanel.setBounds(0, 0, 1066, 94);
+		contentPane.add(headerPanel);
+		headerPanel.setLayout(null);
+		
+		JLabel headerLabel = new JLabel("Sign Up");
+		headerLabel.setForeground(Color.DARK_GRAY);
+		headerLabel.setFont(new Font("Tahoma", Font.BOLD, 35));
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setBounds(352, 30, 305, 43);
+		headerPanel.add(headerLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(173, 255, 47));
+		panel.setBounds(0, 95, 478, 594);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("CMS");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
+		lblNewLabel.setBounds(187, 123, 110, 72);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Course Management System");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(71, 190, 383, 32);
+		panel.add(lblNewLabel_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(478, 96, 590, 593);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(null);
+		mainPanel.setBounds(-475, 0, 1079, 593);
+		panel_1.add(mainPanel);
+		
+		JLabel userModeIcon = new JLabel("");
+		userModeIcon.setIcon(new ImageIcon("C:\\Users\\Acer\\eclipse-workspace\\CMS\\src\\Icons\\mode-portrait.png"));
+		userModeIcon.setBounds(634, 131, 32, 32);
+		mainPanel.add(userModeIcon);
+		
+		JLabel emailIcon = new JLabel("");
+		emailIcon.setIcon(new ImageIcon("C:\\Users\\Acer\\eclipse-workspace\\CMS\\src\\Icons\\envelope.png"));
+		emailIcon.setBounds(630, 266, 32, 32);
+		mainPanel.add(emailIcon);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Garamond", Font.PLAIN, 24));
+		textField.setColumns(10);
+		textField.setBounds(672, 269, 242, 32);
+		mainPanel.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Garamond", Font.PLAIN, 24));
+		textField_1.setColumns(10);
+		textField_1.setBounds(672, 201, 242, 32);
+		mainPanel.add(textField_1);
+		
+		JLabel userIcon = new JLabel("");
+		userIcon.setIcon(new ImageIcon("C:\\Users\\Acer\\eclipse-workspace\\CMS\\src\\Icons\\user.png"));
+		userIcon.setBounds(630, 198, 32, 32);
+		mainPanel.add(userIcon);
+		
+		JLabel usernameLabel = new JLabel("Enter username");
+		usernameLabel.setFont(new Font("Garamond", Font.PLAIN, 24));
+		usernameLabel.setBounds(672, 175, 192, 25);
+		mainPanel.add(usernameLabel);
+		
+		JLabel emailLabel = new JLabel("Enter email");
+		emailLabel.setFont(new Font("Garamond", Font.PLAIN, 24));
+		emailLabel.setBounds(672, 243, 192, 25);
+		mainPanel.add(emailLabel);
+		
+		JLabel userModeLabel = new JLabel("select user mode");
+		userModeLabel.setFont(new Font("Garamond", Font.PLAIN, 24));
+		userModeLabel.setBounds(679, 102, 192, 25);
+		mainPanel.add(userModeLabel);
+		
+		JButton signUpBtn = new JButton("Sign Up");
+		signUpBtn.setBackground(new Color(148, 0, 211));
+		signUpBtn.setFont(new Font("Garamond", Font.PLAIN, 24));
+		signUpBtn.setBounds(639, 399, 308, 36);
+		mainPanel.add(signUpBtn);
+		
+		JLabel infoLabel = new JLabel("Already a member?");
+		infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		infoLabel.setFont(new Font("Garamond", Font.PLAIN, 24));
+		infoLabel.setBounds(639, 445, 308, 36);
+		mainPanel.add(infoLabel);
+		
+		JButton logInBtn = new JButton("Log In");
+		logInBtn.setFont(new Font("Garamond", Font.PLAIN, 24));
+		logInBtn.setBounds(639, 491, 311, 36);
+		mainPanel.add(logInBtn);
+		
+		JLabel phoneIcon_1 = new JLabel("");
+		phoneIcon_1.setIcon(new ImageIcon("C:\\Users\\Acer\\eclipse-workspace\\CMS\\src\\Icons\\lock.png"));
+		phoneIcon_1.setBounds(630, 334, 32, 32);
+		mainPanel.add(phoneIcon_1);
+		
+		JLabel lblEnterPassword = new JLabel("Enter password");
+		lblEnterPassword.setFont(new Font("Garamond", Font.PLAIN, 24));
+		lblEnterPassword.setBounds(672, 311, 192, 25);
+		mainPanel.add(lblEnterPassword);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Garamond", Font.PLAIN, 24));
+		passwordField.setBounds(672, 334, 242, 32);
+		mainPanel.add(passwordField);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Garamond", Font.PLAIN, 24));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Student ", "Instructor", "Admin"}));
+		comboBox.setToolTipText("Select User Mode");
+		comboBox.setMaximumRowCount(3);
+		comboBox.setBounds(683, 134, 178, 29);
+		mainPanel.add(comboBox);
+	}
+}
